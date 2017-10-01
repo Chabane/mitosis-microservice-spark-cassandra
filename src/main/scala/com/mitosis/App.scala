@@ -51,7 +51,6 @@ object App {
     */
   def jsonDecode(text: String): CellBean = {
     try {
-      print(text)
       JsonUtils.deserialize(text, classOf[CellBean])
     } catch {
       case e: IOException =>
@@ -101,7 +100,7 @@ object App {
 		  if (!rdd.isEmpty()) { 
         rdd.map(record => {
            val result = jsonDecode(record.value)
-           (result.name, result.getType) 
+           (result.name, result.`type`) 
         }).saveToCassandra("mitosis", config.streaming.db.table, SomeColumns("name", "celltype")) 
       } else {
        println("No records to save")

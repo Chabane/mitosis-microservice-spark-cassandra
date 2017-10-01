@@ -2,11 +2,17 @@ package com.mitosis.beans
 
 import CellType._
 
+import scala.beans.{BeanProperty, BooleanBeanProperty}
+
+//remove if not needed
+import scala.collection.JavaConversions._
+
 class CellBean {
 
-    private var _name: String = _
-    def name = _name
-    
-    private var _cellType: CellType = _
-    def getType = _cellType
+  @BeanProperty
+  var name: String = _
+
+  @BeanProperty
+  var `type`: String = _
+
 }
