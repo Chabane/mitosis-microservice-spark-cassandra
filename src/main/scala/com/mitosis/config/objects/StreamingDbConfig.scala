@@ -1,13 +1,19 @@
 package com.mitosis.config.objects
 
+import scala.beans.{BeanProperty, BooleanBeanProperty}
+
+//remove if not needed
+import scala.collection.JavaConversions._
+
 class StreamingDbConfig {
-  
-    private var _host: String = _
-    def host = _host
-    
-    private var _port : Int = _
-    def port = _port
-    
-    private var _table : String = _
-    def table = _table
+
+  @BeanProperty
+  var host: String = _
+
+  @BeanProperty
+  var port: Int = _
+
+  @BeanProperty
+  var table: String = _
+
 }

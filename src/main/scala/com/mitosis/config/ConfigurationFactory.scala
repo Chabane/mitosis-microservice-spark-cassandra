@@ -15,13 +15,8 @@ object ConfigurationFactory {
     * @return Returns configuration objects
     */
   def load(): Config = {
-    if (Strings.isNullOrEmpty(System.getProperty("config"))) {
-      throw new RuntimeException(
-        "Configuration file path is empty. " +
-          "Please specify the file path with using -Dconfig=[PATH]")
-    }
-    val config: com.typesafe.config.Config =
-      ConfigFactory.parseFile(new File(System.getProperty("config")))
+    val file = getClass.getClassLoader.getResource("app.conf").getFile()
+    val config: com.typesafe.config.Config = ConfigFactory.parseFile(new File(file))
     ConfigBeanFactory.create(config, classOf[Config])
   }
 

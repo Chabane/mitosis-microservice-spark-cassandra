@@ -1,10 +1,16 @@
 package com.mitosis.config.objects
 
+import scala.beans.{BeanProperty, BooleanBeanProperty}
+
+//remove if not needed
+import scala.collection.JavaConversions._
+
 class StreamingConfig {
-  
-    private var _db: StreamingDbConfig = _
-    def db = _db
-    
-    private var _window: Int = _
-    def window = _window
+
+  @BeanProperty
+  var db: StreamingDbConfig = _
+
+  @BeanProperty
+  var window: Int = _
+
 }

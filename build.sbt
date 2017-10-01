@@ -8,11 +8,11 @@ mainClass in Compile := Some("com.mitosis.App")
 scalaVersion := "2.11.8"
 
 val sparkVersion = "2.2.0"
-val jacksonVersion = "2.9.1"
+val jacksonVersion = "2.6.5"
 val cassandraVersion = "2.0.5"
 val log4jVersion = "1.2.14"
-val typesafeVersion = "1.3.1"
-val guavaVersion = "23.0"
+val typesafeVersion = "1.3.0"
+val guavaVersion = "19.0"
 
 libraryDependencies += "log4j" % "log4j" % log4jVersion
 

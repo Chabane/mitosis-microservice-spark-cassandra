@@ -1,9 +1,18 @@
 package com.mitosis.config.objects
 
+
+import scala.beans.{BeanProperty, BooleanBeanProperty}
+
+//remove if not needed
+import scala.collection.JavaConversions._
+
 class Config {
-    private var _producer: ProducerConfig = _
-    def producer = _producer
-    
-    private var _streaming: StreamingConfig = _
-    def streaming = _streaming
+
+  @BeanProperty
+  var producer: ProducerConfig = _
+
+  @BeanProperty
+  var streaming: StreamingConfig = _
+
 }
+
