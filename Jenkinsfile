@@ -8,7 +8,7 @@ node("master") {
         git url: 'https://github.com/NirbyApp/mitosis-microservice-spark-cassandra.git'
     }
 
-    stage('install') {
+    stage('package') {
       sh 'sbt package'
     }
 
