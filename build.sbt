@@ -1,4 +1,7 @@
+
 resolvers += "Spark Packages Repo" at "https://dl.bintray.com/spark-packages/maven"
+
+exportJars := true
 
 name := "mitosis-microservice-spark-cassandra"
 organization := "com.mitosis"
@@ -11,19 +14,19 @@ val jacksonVersion = "2.6.5"
 val cassandraVersion = "2.0.5"
 val log4jVersion = "1.2.14"
 val typesafeVersion = "1.3.0"
-val guavaVersion = "19.0"
 
-libraryDependencies += "log4j" % "log4j" % log4jVersion
+libraryDependencies ++= Seq(
+    "log4j" % "log4j" % log4jVersion,
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion
-libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion
-libraryDependencies += "org.apache.spark" % "spark-streaming_2.11" % sparkVersion
-libraryDependencies += "org.apache.spark" % "spark-streaming-kafka-0-10_2.11" % sparkVersion
+    "org.apache.spark" %% "spark-core" % sparkVersion,
+    "org.apache.spark" %% "spark-sql" % sparkVersion,
+    "org.apache.spark" % "spark-streaming_2.11" % sparkVersion,
+    "org.apache.spark" % "spark-streaming-kafka-0-10_2.11" % sparkVersion,
 
-libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % cassandraVersion
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion
+    "com.datastax.spark" %% "spark-cassandra-connector" % cassandraVersion,
+    "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
+    "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
 
-libraryDependencies += "com.typesafe" % "config" % typesafeVersion
-libraryDependencies += "com.google.guava" % "guava" % guavaVersion
+    "com.typesafe" % "config" % typesafeVersion,
+)
 
