@@ -3,7 +3,8 @@ resolvers += "Spark Packages Repo" at "https://dl.bintray.com/spark-packages/mav
 name := "mitosis-microservice-spark-cassandra"
 organization := "com.mitosis"
 version := "1.0.0-alpha.0"
-mainClass in Compile := Some("com.mitosis.App")
+
+mainClass in (Compile, run) := Some("com.mitosis.App")
 
 scalaVersion := "2.11.8"
 
