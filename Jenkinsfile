@@ -9,7 +9,7 @@ node("master") {
     }
 
     stage('package') {
-      sh 'sbt package'
+      sh 'sbt clean package'
     }
 
     stage('deploy to Docker') {

@@ -3,8 +3,6 @@ resolvers ++= Seq(
   "Spark Packages Repo" at "https://dl.bintray.com/spark-packages/maven"
 )
 
-exportJars := true
-
 name := "mitosis-microservice-spark-cassandra"
 organization := "com.mitosis"
 version := "1.0.0-alpha.0"
