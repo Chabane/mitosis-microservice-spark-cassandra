@@ -3,6 +3,7 @@ resolvers ++= Seq(
   "Spark Packages Repo" at "https://dl.bintray.com/spark-packages/maven"
 )
 
+
 name := "mitosis-microservice-spark-cassandra"
 organization := "com.mitosis"
 version := "1.0.0-alpha.0"
@@ -18,10 +19,10 @@ val log4jVersion = "1.2.14"
 libraryDependencies ++= Seq(
     "log4j" % "log4j" % log4jVersion,
 
-    "org.apache.spark" %% "spark-core" % sparkVersion,
-    "org.apache.spark" %% "spark-sql" % sparkVersion,
-    "org.apache.spark" %% "spark-streaming" % sparkVersion,
-    "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion,
+    "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
+    "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
+    "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided",
+    "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion % "provided",
 
     "com.datastax.spark" %% "spark-cassandra-connector" % cassandraVersion,
     "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
