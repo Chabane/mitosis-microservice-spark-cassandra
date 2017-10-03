@@ -5,6 +5,7 @@ import com.typesafe.config.ConfigBeanFactory
 import com.typesafe.config.ConfigFactory
 
 import java.io.File
+import java.io.InputStreamReader
 
 object ConfigurationFactory {
 
@@ -14,8 +15,8 @@ object ConfigurationFactory {
     * @return Returns configuration objects
     */
   def load(): Config = {
-    val file = getClass.getClassLoader.getResource("app.conf").getFile()
-    val config: com.typesafe.config.Config = ConfigFactory.parseFile(new File(file))
+    val is = new InputStreamReader(getClass.getResourceAsStream(s"/app.conf"))
+    val config: com.typesafe.config.Config = ConfigFactory.parseReader(is).resolve()
     ConfigBeanFactory.create(config, classOf[Config])
   }
 
