@@ -73,8 +73,6 @@ object Main {
 
     val servers = config.producer.hosts.toArray.mkString(",")
 
-    val sqlContext = new SQLContext(sparkSession.sparkContext)
-
     val kafkaParams = Map[String, Object](
       "bootstrap.servers" -> servers,
       "key.deserializer" -> classOf[StringDeserializer],
