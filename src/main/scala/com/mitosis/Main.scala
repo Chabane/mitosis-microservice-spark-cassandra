@@ -37,7 +37,7 @@ import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.sql.{SaveMode, SparkSession}
 
-object App {
+object Main {
   
   private[this] lazy val logger = Logger.getLogger(getClass)
 
